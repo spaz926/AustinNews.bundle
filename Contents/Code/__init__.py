@@ -4,8 +4,8 @@ import re
 ATTRIBUTELISTPATTERN = re.compile(r'''((?:[^,"']|"[^"]*"|'[^']*')+)''')
 ext_x_stream_inf = '#EXT-X-STREAM-INF'
 
-TITLE = 'Denver News' # Your Channel title here
-PREFIX = '/video/denvernews' # Change the 'youruniqueidhere' part
+TITLE = 'Austin News' # Your Channel title here
+PREFIX = '/video/austinnews' # Change the 'youruniqueidhere' part
 
 ART = '9News-icon.jpg'
 ICON = '9News-icon.png'
@@ -30,6 +30,11 @@ CH31NEWS_ICON = 'FOX31-icon.jpg'
 CH31NEWS_LIVESTREAM_SUB = "3417789"
 CH31NEWS_SUMMARY = "Live webcasts are available at the following times: \n\nMonday - Friday: 5:00 - 9:00 AM, 5:00 - 6:00 PM, 9:00 - 10:30 PM\n\nSaturday: 5:00-6:00 PM, 9:00 - 10:00 PM\n\nSunday: 8:00 - 9:00 AM, 5:00-6:00 PM, 9:00 - 10:30 PM\n\nContinuously plays the last broadcasted news at all other times."
 
+KXAN_ART = 'KXAN-art.jpg'
+KXAN_ICON = 'KXAN-icon.jpg'
+KXAN_LIVESTREAM_SUB = "1506296"
+KXAN_SUMMARY = "Live webcasts are available at the following times: \n\nUNKNOWN"
+
 ###################################################################################################
 def Start():
 
@@ -51,6 +56,8 @@ def MainMenu():
 
     oc = ObjectContainer()
 
+    oc.add(StreamfromLiveStreamAPI(KXAN_LIVESTREAM_SUB, "KXAN News Live", KXAN_ICON, KXAN_ART, KXAN_SUMMARY))
+    
     oc.add(StreamfromLiveStreamAPI(CH2NEWS_LIVESTREAM_SUB, "2 News Live - KWGN", CH2NEWS_ICON, CH2NEWS_ART, CH2NEWS_SUMMARY))
     oc.add(StreamM3U8("7 News Live - KMGH", CH7NEWS_ICON, CH7NEWS_ART, CH7NEWS_URL, CH7NEWS_SUMMARY))
     oc.add(StreamM3U8("9 News Live - KUSA", CH9NEWS_ICON, CH9NEWS_ART, CH9NEWS_URL, CH9NEWS_SUMMARY))
