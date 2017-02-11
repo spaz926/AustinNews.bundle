@@ -122,12 +122,12 @@ def normalize_attribute(attribute):
     return attribute.replace('-', '_').lower().strip()
 ###################################################################################################
 def getLiveStreamAPIURL(id):
-    idObj = JSON.ObjectFromURL("http://api.new.livestream.com/accounts/" + id)
+    idObj = JSON.ObjectFromURL("https://api.new.livestream.com/accounts/" + id)
     events = idObj["upcoming_events"]["data"]
     eventId = getLiveStreamEventId(events)
     Log.Debug("******* ID = %s and EventID = %s",id,eventId)
-    eventObj = JSON.ObjectFromURL("http://api.new.livestream.com/accounts/" + id + "/events/" + str(eventId))
-    return eventObj["stream_info"]["m3u8_url"]
+    eventObj = JSON.ObjectFromURL("https://api.new.livestream.com/accounts/" + id + "/events/" + str(eventId))
+    return eventObj["stream_info"]["secure_m3u8_url"]
 ###################################################################################################
 def getLiveStreamEventId(events):
     for event in events:
