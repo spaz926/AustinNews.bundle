@@ -20,10 +20,10 @@ CH7NEWS_ICON = '7News-icon.jpg'
 CH7NEWS_URL = "http://stskmghstr01-i.akamaihd.net/hls/live/203185/anvato/master.m3u8"
 CH7NEWS_SUMMARY = "Live webcasts are available at the following times: \n\nMonday - Friday: 4:30 - 7:00 AM, 11:00 - 12:00 PM, 5:00 - 5:30 PM, 10:00 - 10:30 PM\n\nSaturday: 7:00 - 9:00 AM, 5:00 - 6:00 PM, 10:00 - 10:30 PM\n\nSunday: 7:00 - 10:00 AM, 5:00 - 6:00 PM, 10:00 - 11:00 PM"
 
-CH9NEWS_ART = '9News-icon.jpg'
-CH9NEWS_ICON = '9News-icon.png'
-CH9NEWS_URL = "http://b_kusa-f.akamaihd.net/i/KUSA_Live_1@98937/master.m3u8"
-CH9NEWS_SUMMARY = "Live webcasts are available at the following times: \n\nMonday - Friday: 4:30 - 9:00 AM, 11:00 - 11:30 PM, 12:00 - 12:30 PM, 4:00 - 5:30 PM, 6:00 - 6:30 PM, 9:00 - 10:30 PM\n\nSaturday - Sunday: 6:00 - 9:00 AM, 5:00 - 6:00 PM, 9:00 - 10:30 PM"
+#CH9NEWS_ART = '9News-icon.jpg'
+#CH9NEWS_ICON = '9News-icon.png'
+#CH9NEWS_URL = "http://b_kusa-f.akamaihd.net/i/KUSA_Live_1@98937/master.m3u8"
+#CH9NEWS_SUMMARY = "Live webcasts are available at the following times: \n\nMonday - Friday: 4:30 - 9:00 AM, 11:00 - 11:30 PM, 12:00 - 12:30 PM, 4:00 - 5:30 PM, 6:00 - 6:30 PM, 9:00 - 10:30 PM\n\nSaturday - Sunday: 6:00 - 9:00 AM, 5:00 - 6:00 PM, 9:00 - 10:30 PM"
 
 CH31NEWS_ART = 'FOX31-art.jpg'
 CH31NEWS_ICON = 'FOX31-icon.jpg'
@@ -53,7 +53,7 @@ def MainMenu():
 
     oc.add(StreamfromLiveStreamAPI(CH2NEWS_LIVESTREAM_SUB, "2 News Live - KWGN", CH2NEWS_ICON, CH2NEWS_ART, CH2NEWS_SUMMARY))
     oc.add(StreamM3U8("7 News Live - KMGH", CH7NEWS_ICON, CH7NEWS_ART, CH7NEWS_URL, CH7NEWS_SUMMARY))
-    oc.add(StreamM3U8("9 News Live - KUSA", CH9NEWS_ICON, CH9NEWS_ART, CH9NEWS_URL, CH9NEWS_SUMMARY))
+#    oc.add(StreamM3U8("9 News Live - KUSA", CH9NEWS_ICON, CH9NEWS_ART, CH9NEWS_URL, CH9NEWS_SUMMARY))
     oc.add(StreamfromLiveStreamAPI(CH31NEWS_LIVESTREAM_SUB, "Fox 31 News Live - KDVR", CH31NEWS_ICON, CH31NEWS_ART, CH31NEWS_SUMMARY))
 
     return oc
@@ -96,8 +96,8 @@ def GetStreamURL(url):
     for index, line in enumerate(lines):
         bandwidth = getBandwidth(line)
         if bandwidth > best_bandwidth:
-            best_bandwidth = bandwidth
-            best_url = lines[index + 1]
+        	best_bandwidth = bandwidth
+        	best_url = lines[index + 1]
 
     if best_url != '':
             Log.Debug("Streaming URL found = %s", best_url)
