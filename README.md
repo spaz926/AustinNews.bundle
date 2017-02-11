@@ -3,10 +3,10 @@ AustinNews.bundle
 
 Plex Media Center Plugin offering Austin news channels for live streaming.
 
-All Austin channels are offered. This includes:
+Two Austin channels are offered. This includes:
 
 * KXAN Channel 36 (NBC)
-* KVUE Channel 24 (ABC)
+* KTBC Channel 7 (FOX)
 
 This is a fork of jgenender's DenverNews plugin modified for Austin news channels.
 
