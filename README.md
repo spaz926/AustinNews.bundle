@@ -1,6 +1,8 @@
 AustinNews.bundle
 =================
 
+> Since Plex will be depreciating plug-in support, this repo is being archived. Consider it **as-is**.
+
 Plex Media Center Plugin offering Austin news channels for live streaming.
 
 Two Austin channels are offered. This includes:
